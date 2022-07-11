@@ -12,12 +12,12 @@
 #include <DallasTemperature.h>
 
 #define DEVICE_TYPE "sensor"
-#define DEVICE_FIRMWARE_VERSION "0.0.1"
+#define DEVICE_FIRMWARE_VERSION "0.1.1"
 
 #define PIR_PIN D2
 #define TEMPERATURE_PIN D6
 
-#define TEMPERATURE_READ_PERIOD 10000
+#define TEMPERATURE_READ_PERIOD 60000
 
 
 IotKernel iot_kernel(DEVICE_TYPE,DEVICE_FIRMWARE_VERSION); 
