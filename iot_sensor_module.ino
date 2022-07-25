@@ -16,8 +16,10 @@
 
 #define PIR_PIN D2
 #define TEMPERATURE_PIN D6
+#define ILLUMINANCE_PIN A0
 
 #define TEMPERATURE_READ_PERIOD 60000
+#define ILLUMINANCE_READ_PERIOD 60000
 
 
 IotKernel iot_kernel(DEVICE_TYPE,DEVICE_FIRMWARE_VERSION); 
@@ -28,10 +30,12 @@ DallasTemperature temperatureSensor(&oneWire);
 void setup() {
   iot_kernel.init();
   temperatureSensor.begin();
+  illuminance_setup();
 }
 
 void loop() {
   iot_kernel.loop();
   read_PIR();
   read_temperature();
+  read_illuminance();
 }
